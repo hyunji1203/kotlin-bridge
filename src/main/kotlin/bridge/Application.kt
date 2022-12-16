@@ -39,7 +39,9 @@ fun main() {
                 userBridge = BridgeGameNew().retry(userBridge)
                 gameTimes++
             }
-            if (command == "Q") {}
+            if (command == "Q") {
+                OutputV().printResult(bridgeMatch, userBridge)
+            }
         }
     }
 
