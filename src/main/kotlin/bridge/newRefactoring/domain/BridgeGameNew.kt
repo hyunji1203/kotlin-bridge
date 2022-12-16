@@ -11,5 +11,7 @@ class BridgeGameNew {
         return bridgeMatch
     }
 
-    fun retry() {}
+    fun retry() {
+
+    }
 }

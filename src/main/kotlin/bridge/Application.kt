@@ -12,6 +12,7 @@ fun main() {
     var bridgeNumberGenerator = BridgeRandomNumberGenerator()
     var bridge = BridgeMakerNew(bridgeNumberGenerator).makeBridge(InputV().readBridgeSize())
     var userBridge = mutableListOf<String>()
+    var gameTimes = 1
     println(bridge)
 
     //다리 이동
@@ -28,9 +29,14 @@ fun main() {
         if (bridge == userBridge) {
             OutputV().printResult(bridgeMatch, userBridge)
             OutputV().gameSuccess("성공")
+            OutputV().gameTimes(gameTimes)
         }
 
-
+        if (bridgeMatch.contains("X")){
+            var command = InputV().readGameCommand()
+            bridgeMatch.clear()
+            userBridge.clear()
+        }
     }
 
 }
