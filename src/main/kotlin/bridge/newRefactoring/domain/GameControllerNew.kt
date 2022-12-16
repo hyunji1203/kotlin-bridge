@@ -7,31 +7,17 @@ import bridge.newRefactoring.UI4.InputV
 class GameControllerNew {
     var gameTimes = 1
     var userBridge = mutableListOf<String>()
+    var control = 0
 
     fun gameStart(){
         var bridge = GameControllerNew().bridgeCreate()
-
-        while (bridge != userBridge){
+        while (control != 1){
             userBridge = userMove()
             var bridgeMatch = BridgeGameNew().move(userBridge, bridge)
-
             OutputV().printMap(bridgeMatch, userBridge)
 
-            //최종 결과 출력
-            if (bridge == userBridge) gameResult(bridgeMatch, "성공")
-
-            if (bridgeMatch.contains("X")){
-                var command = InputV().readGameCommand()
-                if (command == "R"){
-                    bridgeMatch.clear()
-                    userBridge = BridgeGameNew().retry(userBridge)
-                    gameTimes++
-                }
-                if (command == "Q") {
-                    gameResult(bridgeMatch, "실패")
-                    break
-                }
-            }
+            if (bridge == userBridge) successSituation(bridgeMatch)
+            if (bridgeMatch.contains("X")) failSituation(bridgeMatch)
         }
     }
 
@@ -48,6 +34,11 @@ class GameControllerNew {
         return userBridge
     }
 
+    fun successSituation(bridgeMatch: MutableList<String>){
+        gameResult(bridgeMatch, "성공")
+        control = 1
+    }
+
     fun failSituation(bridgeMatch: MutableList<String>,): MutableList<String>{
         var command = InputV().readGameCommand()
         if (command == "R"){
@@ -55,7 +46,10 @@ class GameControllerNew {
             BridgeGameNew().retry(userBridge)
             gameTimes++
         }
-        if (command == "Q") gameResult(bridgeMatch, "실패")
+        if (command == "Q") {
+            gameResult(bridgeMatch, "실패")
+            control = 1
+        }
         return bridgeMatch
     }
 
