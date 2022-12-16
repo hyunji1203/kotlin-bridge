@@ -1,18 +1,13 @@
 package bridge.newRefactoring.UI
 
 class OutputV {
+    fun gameStart(){
+        println("다리 건너기 게임을 시작합니다.")
+    }
+
     fun printMap(bridgeMatch : MutableList<String>, userBridge : MutableList<String>) {
         printUpMap(bridgeMatch, userBridge)
         printDownMap(bridgeMatch, userBridge)
-    }
-
-    fun printResult(bridgeMatch: MutableList<String>, userBridge: MutableList<String>) {
-        println("최종 게임 결과")
-        printMap(bridgeMatch, userBridge)
-    }
-
-    fun gameStart(){
-        println("다리 건너기 게임을 시작합니다.")
     }
 
     fun printUpMap(bridgeMatch : MutableList<String>, userBridge : MutableList<String>) {
@@ -40,5 +35,15 @@ class OutputV {
 
             if (i == userBridge.size-1) println("]")
         }
+    }
+
+    fun printResult(bridgeMatch: MutableList<String>, userBridge: MutableList<String>) {
+        println("최종 게임 결과")
+        printMap(bridgeMatch, userBridge)
+    }
+
+    fun gameSuccess(success : String){
+        if (success == "성공") println("게임 성공 여부: $success")
+        if (success == "실패") println("게임 성공 여부: $success")
     }
 }

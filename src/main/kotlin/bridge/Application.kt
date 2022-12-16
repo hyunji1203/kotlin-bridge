@@ -25,7 +25,10 @@ fun main() {
         OutputV().printMap(bridgeMatch, userBridge)
 
         //최종 결과 출력
-        if (bridge == userBridge) OutputV().printResult(bridgeMatch, userBridge)
+        if (bridge == userBridge) {
+            OutputV().printResult(bridgeMatch, userBridge)
+            OutputV().gameSuccess("성공")
+        }
 
 
     }
