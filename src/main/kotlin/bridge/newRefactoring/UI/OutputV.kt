@@ -46,4 +46,8 @@ class OutputV {
         if (success == "성공") println("게임 성공 여부: $success")
         if (success == "실패") println("게임 성공 여부: $success")
     }
+
+    fun gameTimes(gameTimes : Int){
+        println("총 시도한 횟수: $gameTimes")
+    }
 }
