@@ -10,7 +10,9 @@ class InputV {
     }
 
     fun readMoving(): String {
-        return ""
+        println("이동할 칸을 선택해주세요. (위: U, 아래: D)")
+        var moving = Console.readLine()
+        return moving
     }
 
     fun readGameCommand(): String {
