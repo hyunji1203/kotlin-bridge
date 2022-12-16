@@ -39,7 +39,7 @@ class GameControllerNew {
         control = 1
     }
 
-    fun failSituation(bridgeMatch: MutableList<String>,): MutableList<String>{
+    fun failSituation(bridgeMatch: MutableList<String>,){
         var command = InputV().readGameCommand()
         if (command == "R"){
             bridgeMatch.clear()
@@ -50,7 +50,6 @@ class GameControllerNew {
             gameResult(bridgeMatch, "실패")
             control = 1
         }
-        return bridgeMatch
     }
 
     fun gameResult(bridgeMatch: MutableList<String>, success: String){
