@@ -11,7 +11,8 @@ class BridgeGameNew {
         return bridgeMatch
     }
 
-    fun retry() {
-
+    fun retry(userBridge: MutableList<String>) : MutableList<String> {
+        userBridge.clear()
+        return userBridge
     }
 }

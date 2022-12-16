@@ -34,8 +34,11 @@ fun main() {
 
         if (bridgeMatch.contains("X")){
             var command = InputV().readGameCommand()
-            bridgeMatch.clear()
-            userBridge.clear()
+            if (command == "R"){
+                bridgeMatch.clear()
+                userBridge = BridgeGameNew().retry(userBridge)
+            }
+            if (command == "Q") {}
         }
     }
 
