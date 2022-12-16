@@ -12,14 +12,17 @@ fun main() {
     var bridgeNumberGenerator = BridgeRandomNumberGenerator()
     var bridge = BridgeMakerNew(bridgeNumberGenerator).makeBridge(InputV().readBridgeSize())
     var userBridge = mutableListOf<String>()
+    println(bridge)
 
     //다리 이동
     while (bridge != userBridge){
         var moving = InputV().readMoving()
+        println(moving)
         userBridge.add(moving)
         var bridgeMatch = BridgeGameNew().move(userBridge, bridge)
 
-
+        //다리 출력
+        OutputV().printMap(bridgeMatch, userBridge)
     }
 
 }
