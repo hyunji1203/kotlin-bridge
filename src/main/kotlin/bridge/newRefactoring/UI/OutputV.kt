@@ -6,7 +6,10 @@ class OutputV {
         printDownMap(bridgeMatch, userBridge)
     }
 
-    fun printResult() {}
+    fun printResult(bridgeMatch: MutableList<String>, userBridge: MutableList<String>) {
+        println("최종 게임 결과")
+        printMap(bridgeMatch, userBridge)
+    }
 
     fun gameStart(){
         println("다리 건너기 게임을 시작합니다.")

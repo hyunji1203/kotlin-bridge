@@ -23,6 +23,11 @@ fun main() {
 
         //다리 출력
         OutputV().printMap(bridgeMatch, userBridge)
+
+        //최종 결과 출력
+        if (bridge == userBridge) OutputV().printResult(bridgeMatch, userBridge)
+
+
     }
 
 }
