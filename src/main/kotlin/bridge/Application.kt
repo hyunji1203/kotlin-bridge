@@ -13,7 +13,6 @@ fun main() {
     var bridge = BridgeMakerNew(bridgeNumberGenerator).makeBridge(InputV().readBridgeSize())
     var userBridge = mutableListOf<String>()
     var gameTimes = 1
-    println(bridge)
 
     //다리 이동
     while (bridge != userBridge){
