@@ -1,7 +1,7 @@
 package bridge.newRefactoring.domain
 
 class Exception {
-    fun sizeException(size: String){
+    fun sizeException(size : String){
         bridgeTypeException(size)
         bridgeSizeException(size)
     }
