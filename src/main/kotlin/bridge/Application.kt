@@ -41,6 +41,7 @@ fun main() {
             }
             if (command == "Q") {
                 OutputV().printResult(bridgeMatch, userBridge)
+                OutputV().gameSuccess("실패")
             }
         }
     }
